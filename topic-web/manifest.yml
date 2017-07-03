@@ -1,0 +1,17 @@
+---
+applications:
+- name: topic-web
+  memory: 750M
+  instances: 1
+  host: topic-web
+  domain: cfapps.io
+  path: topic-web-0.0.1-SNAPSHOT.jar
+  env:
+    JAVA_OPTS : "-Xms128m -Xmx512m"
+    TOPIC_SERVICE: https://topic-service.cfapps.io/
+    SALT_KEY: 3deed260fa
+    SECRET_KEY: fasf7sf4w77g
+    TOPIC_CONFIG: https://topic-config.cfapps.io/
+    CONFIG_USER: Ramty
+    CONFIG_PASSWORD: Yub77
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
